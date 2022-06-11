@@ -11,6 +11,7 @@ import {Component, OnInit} from '@angular/core'
 export class CardComponent implements OnInit {
     title ='My Card Title'
     text: string ='Mysample text'
+    chTitle :string =''
     
     disabled = false 
     textbtn = 'Enabled' 
@@ -33,6 +34,20 @@ export class CardComponent implements OnInit {
 
     changeTitle(){
         this.title='This title has been changed'
+    }
+
+    inputHandler(event:any){
+        const value = event.target.value 
+        this.title = value
+    }
+
+    inputHandler2(value:string){
+          this.text = value
+    }
+
+    changeHandler(){
+        // for validation
+        this.chTitle=this.title
     }
 
 }
