@@ -1,6 +1,30 @@
 <div class="card">
-<h2>{{ title }}</h2>
-<h2>{{ text }}</h2>
+<h2 [ngStyle]="{
+    color: title.length<10 ? 'black' : 'blue',
+    fontWeight: title.length<7 ? 'normal' : 'bold'
+
+
+}" >{{ title }}</h2>
+
+<!-- <h2 class="text" [ngClass]="{
+   blue: textColor ==='blue', 
+   green: textColor ==='green',
+   red: textColor ==='red'
+
+
+}">{{ text }}</h2> -->
+
+<p class="text"  
+    [class.blue]="textColor === 'blue' " 
+    [class.green]="textColor === 'green' " 
+    [class.red]="textColor === 'red' " 
+    >{{ text }}</p>
+
+
+
+
+
+
 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam velit dolorem culpa excepturi praesentium ipsa perspiciatis hic recusandae earum officiis, voluptate, est cum, laudantium quam corporis maxime labore vel maiores?
 Odio fuga repudiandae in! Laborum molestiae aliquid natus quam eveniet pariatur quae. Cupiditate eaque error earum consequuntur tempore vel deserunt id est aliquam repudiandae aliquid sequi soluta quas, expedita minus?</p>
 <p>{{ getInfo() }}</p>
@@ -29,5 +53,13 @@ Odio fuga repudiandae in! Laborum molestiae aliquid natus quam eveniet pariatur 
     <input type="text" [(ngModel)]="title" (ngModelChange)="changeHandler()">
     <p>{{ chTitle }}</p>
 </div>
+
+
+<div class="buttons">
+    <button (click)="textColor='blue'" style="color: blue">Set Blue</button>
+    <button (click)="textColor='green'" style="color: green">Set green</button>
+    <button (click)="textColor='red'" style="color: red">Set Red</button>
+</div>
+
 
 </div>

@@ -16,6 +16,10 @@ export class CardComponent implements OnInit {
     disabled = false 
     textbtn = 'Enabled' 
 
+    textColor :string =''
+
+
+
    imgUrl:string='https://upload.wikimedia.org/wikipedia/commons/c/cf/Angular_full_color_logo.svg'
 
    
