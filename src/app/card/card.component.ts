@@ -8,4 +8,14 @@ import {Component} from '@angular/core'
 
 })
 
-export class CardComponent {}
+export class CardComponent {
+    title ='My Card Title'
+    text: string ='Mysample text'
+
+   imgUrl:string='https://upload.wikimedia.org/wikipedia/commons/c/cf/Angular_full_color_logo.svg'
+
+    getInfo(){
+        return 'This is my info'
+    }
+
+}
